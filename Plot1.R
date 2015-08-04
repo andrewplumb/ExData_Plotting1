@@ -4,6 +4,7 @@ path2epc <- "C:\\Users\\XBBLXKV\\Documents\\household_power_consumption.txt"
 epc <- read.table(path2epc, header = TRUE, sep = ";")
 epcfiltered <- filter(epc, Date == "1/2/2007" | Date == "2/2/2007")
 
+par(mfrow = c(1,1))
 par(mar = c(4,4,2,2))
 hist(as.numeric(levels(epcfiltered$Global_active_power))[epcfiltered$Global_active_power], col = "red", xlab = "Global Active Power (kilowatts)", main = "Global Active Power")
 
